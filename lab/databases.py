@@ -60,3 +60,14 @@ def query_by_id(student_id):
     student = session.query(Student).filter_by(
         student_id=student_id).first()
     return student
+
+
+def delete_by_id(student_id):
+	session.query(Student).filter_by(student_id=student_id).delete()
+	session.commit()	
+
+#add_student("mousa","y2",True)
+#add_student("hell","tes",False)
+#print(query_by_id(3))
+#delete_by_id(2)
+#print(query_all())
