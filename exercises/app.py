@@ -13,10 +13,10 @@ def display_student(student_id):
 @app.route('/add', methods=['GET',"POST'"])
 def add_student_route():
 	if requst.method == 'GET':
-		return ('add.html')
+		return render_template('add.html')
 	else:
-		return "received POST requst"
-		return ('add.html')
-
+		add_student(request.form['student_name'],
+		request.form['student_year'], False)
+		return render_template('add.html')
 
 app.run(debug=True)
